@@ -14,6 +14,7 @@ export interface IConnection {
     currentAccessToken?: string;
     refreshToken?: string;
     isCurrentlyConnected?: boolean;
+    tokenExpiresAt?: number; // Timestamp when the token expires (in milliseconds since epoch)
 }
 
 export interface Token {
@@ -293,9 +294,10 @@ export interface ITools {
 }
 
 export interface IToolDetails {
-    toolName: string;
-    toolShortName: string;
-    toolAuthor: string;
+    name: string;
+    shortName: string;
+    author: string;
+    icon?: string;
 }
 export interface ICliCommandList {
     commands: ICliCommand[];
